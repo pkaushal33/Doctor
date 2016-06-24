@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/custom_bottombar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/custom_ok"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="OK"
+            android:textSize="20sp"
+            android:layout_weight="0.50"/>
+
+        <Button
+            android:id="@+id/custom_cancel"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Cancel"
+            android:textSize="20sp"
+            android:layout_weight="0.50"/>
+    </LinearLayout>
+
+    <com.github.gcacace.signaturepad.views.SignaturePad
+        android:id="@+id/signature_pad"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/custom_bottombar"
+        android:background="@color/text_color"
+        app:penColor="@color/profile_text_color"/>
+
+</RelativeLayout>

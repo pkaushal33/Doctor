@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.designslick.doctor.PatientvisitActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:theme="@style/ToolbarColoredBackArrow"
+        android:gravity="center"
+        android:titleTextColor="@color/dashboard_color" /> />
+
+
+    <ImageView
+        android:id="@+id/iv_visit_attachement"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/toolbar"
+        android:background="@color/visit_attachement_background"
+        android:src="@drawable/ic_camera" />
+
+    <Button
+        android:id="@+id/btn_visit_submit"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:text="@string/strProfileSubmit"
+        android:textColor="@color/dashboard_color" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_visit_submit"
+        android:layout_below="@id/iv_visit_attachement">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <AutoCompleteTextView
+            android:id="@+id/ed_visit_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:hint="@string/strProfileName" />
+
+        <AutoCompleteTextView
+            android:id="@+id/ed_visit_mobile"
+            style="@style/visit_edittext"
+            android:maxLength="15"
+            android:inputType="number"
+            android:hint="@string/strProfileMobile" />
+
+        <EditText
+            android:id="@+id/ed_visit_date"
+            style="@style/visit_edittext"
+            android:hint="@string/strVisitDate" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:weightSum="0.99">
+
+            <EditText
+                android:id="@+id/ed_visit_payment"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.33"
+                android:hint="@string/strProfilePayment"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textColor="@color/profile_text_color"
+                android:textColorHint="@color/profile_text_color" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.40"
+                android:gravity="center"
+                android:text="@string/strProfilePaymentStatus"
+                android:textColor="@color/profile_text_color"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/rdg_profile_paymentstatus"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.26"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rdb_visit_paid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:text="@string/strProfilePaid"
+                    android:textColor="@color/profile_text_color" />
+
+                <RadioButton
+                    android:id="@+id/rdb_visit_unpaid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/strProfileUnpaid"
+                    android:textColor="@color/profile_text_color" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_visit_addprescription"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:text="@string/strProfileAddPrescription"
+            android:textColor="@color/profile_text_color"
+            android:textSize="24sp" />
+    </LinearLayout>
+    </ScrollView>
+    <RelativeLayout
+        android:id="@+id/rel_signature_pad"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btn_visit_submit"
+        android:visibility="gone">
+
+        <include
+            layout="@layout/custom_prescrption"/>
+    </RelativeLayout>
+
+</RelativeLayout>

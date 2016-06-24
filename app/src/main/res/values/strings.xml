@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Doctor</string>
+
+    <string name="strDoctorName">Dr JAYESH PATEL</string>
+
+
+    <!-- Dashboard Screen-->
+    <string name="strDashboard">Dashboard</string>
+    <string name="strCreateProfile">Create Profile</string>
+    <string name="strCreatePatientVisit">Create Patient Visit</string>
+    <string name="strDueAmount">Due Amount</string>
+    <string name="strPatientHistory">Patient History</string>
+    <string name="strSettings">Settings</string>
+    <string name="strBackupData">Backup Data</string>
+    <string name="strRestoreData">Restore Data</string>
+
+
+    <string name="strProfileTitle">Create Patient Profile</string>
+
+    <!-- Create Patient Profile -->
+    <string name="strProfileName">Name</string>
+    <string name="strProfileAge">Age</string>
+    <string name="strProfileSex">Sex :</string>
+    <string name="strProfileMale">Male</string>
+    <string name="strProfileFemale">Female</string>
+    <string name="strProfileMobile">Mobile</string>
+    <string name="strProfileAddress">Address</string>
+    <string name="strProfileQualification">Qualification</string>
+    <string name="strProfileOccupation">Occupation</string>
+    <string name="strProfileDateOfBirth">Date of Birth</string>
+    <string name="strProfileFamilyRefernce">Family Reference</string>
+    <string name="strProfilePayment">Amount</string>
+    <string name="strProfilePaymentStatus">Status:</string>
+    <string name="strProfilePaid">Paid</string>
+    <string name="strProfileUnpaid">Unpaid</string>
+    <string-array name="strProfileFamilyCharacter">
+        <item>Select</item>
+        <item>Father</item>
+        <item>Mother</item>
+        <item>Son</item>
+        <item>Daughter</item>
+        <item>Wife</item>
+    </string-array>
+    <string name="strProfileAddPrescription"><u>Add Prescription</u></string>
+    <string name="strProfileSubmit">Submit</string>
+
+    <string name="msgProfileName">Please enter Name.</string>
+    <string name="msgProfileAge">Please enter Age.</string>
+    <string name="msgProfileSex">Please select Sex.</string>
+    <string name="msgProfileMobile">Please enter mobile.</string>
+
+
+    <!-- Create Patient Visit -->
+    <string name="strVisitDate">Visit Date</string>
+
+    <!-- Common Message -->
+    <string name="msgNotInternet">Please check you internet. Try Again...</string>
+    <string name="msgResponseNull">Something went wrong.Please Try Again...</string>
+
+</resources>

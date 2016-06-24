@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.designslick.doctor.DashboardActivity">
+
+    <RelativeLayout
+        android:id="@+id/dashboard_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/strDashboard"
+            android:textSize="26sp"
+            android:textColor="@color/text_color"
+            android:textAllCaps="true"
+            android:layout_centerInParent="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_search"
+            android:padding="10dp"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:layout_below="@id/dashboard_title"
+        android:layout_centerInParent="true"
+        android:weightSum="0.99">
+
+        <LinearLayout
+            style="@style/dashboard_menu_linerlayout">
+
+            <TextView
+                android:id="@+id/tv_dashboard_profile"
+                style="@style/dashboard_menu_textview"
+                android:drawableTop="@drawable/ic_create_profile"
+                android:text="@string/strCreateProfile"/>
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/divider_color"/>
+            <TextView
+                android:id="@+id/tv_dashboard_patient_visit"
+                style="@style/dashboard_menu_textview"
+                android:drawableTop="@drawable/ic_create_profile"
+                android:text="@string/strCreatePatientVisit"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider_color"/>
+        <LinearLayout
+            style="@style/dashboard_menu_linerlayout">
+
+            <TextView
+                android:id="@+id/tv_dashboard_due_amount"
+                style="@style/dashboard_menu_textview"
+                android:drawableTop="@drawable/ic_due_icon"
+                android:text="@string/strDueAmount"/>
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/divider_color"/>
+            <TextView
+                android:id="@+id/tv_dashboard_patient_history"
+                style="@style/dashboard_menu_textview"
+                android:drawableTop="@drawable/ic_setting_icon"
+                android:text="@string/strPatientHistory"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider_color"/>
+        <LinearLayout
+            style="@style/dashboard_menu_linerlayout">
+
+            <TextView
+                android:id="@+id/tv_dashboard_backupdata"
+                style="@style/dashboard_menu_textview"
+                android:drawableTop="@drawable/ic_backup"
+                android:text="@string/strBackupData"/>
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/divider_color"/>
+            <TextView
+                android:id="@+id/tv_dashboard_restoredata"
+                style="@style/dashboard_menu_textview"
+                android:drawableTop="@drawable/ic_restore_icon"
+                android:text="@string/strRestoreData"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.designslick.doctor.ProfileActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:titleTextColor="@color/dashboard_color"
+        app:theme="@style/ToolbarColoredBackArrow" />
+
+    <Button
+        android:id="@+id/btn_profile_submit"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:text="@string/strProfileSubmit"
+        android:textColor="@color/dashboard_color" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@id/btn_profile_submit">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/ed_profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/strProfileName"
+            android:maxLines="1"
+            android:textColor="@color/profile_text_color"
+            android:textColorHint="@color/profile_text_color" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:weightSum="0.99">
+
+            <EditText
+                android:id="@+id/ed_profile_age"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.33"
+                android:hint="@string/strProfileAge"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textColor="@color/profile_text_color"
+                android:textColorHint="@color/profile_text_color" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.40"
+                android:gravity="center"
+                android:text="@string/strProfileSex"
+                android:textColor="@color/profile_text_color"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/rdg_profile_sex"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.26"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rdb_profile_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:text="@string/strProfileMale"
+                    android:textColor="@color/profile_text_color" />
+
+                <RadioButton
+                    android:id="@+id/rdb_profile_female"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/strProfileFemale"
+                    android:textColor="@color/profile_text_color" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+
+            <EditText
+                android:id="@+id/ed_profile_mobile"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:hint="@string/strProfileMobile"
+                android:inputType="number"
+                android:maxLength="15"
+                android:maxLines="1"
+                android:textColor="@color/profile_text_color"
+                android:textColorHint="@color/profile_text_color" />
+
+            <EditText
+                android:id="@+id/ed_profile_dateofbirth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="@string/strProfileDateOfBirth"
+                android:textColor="@color/profile_text_color"
+                android:textColorHint="@color/profile_text_color" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/ed_profile_address"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/strProfileAddress"
+            android:maxLines="1"
+            android:textColor="@color/profile_text_color"
+            android:textColorHint="@color/profile_text_color" />
+
+        <EditText
+            android:id="@+id/ed_profile_qualification"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.33"
+            android:hint="@string/strProfileQualification"
+            android:maxLines="1"
+            android:textColor="@color/profile_text_color"
+            android:textColorHint="@color/profile_text_color" />
+
+        <EditText
+            android:id="@+id/ed_profile_occupation"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.33"
+            android:hint="@string/strProfileOccupation"
+            android:maxLines="1"
+            android:textColor="@color/profile_text_color"
+            android:textColorHint="@color/profile_text_color" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:weightSum="0.99">
+
+            <EditText
+                android:id="@+id/ed_profile_payment"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.33"
+                android:hint="@string/strProfilePayment"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textColor="@color/profile_text_color"
+                android:textColorHint="@color/profile_text_color" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.40"
+                android:gravity="center"
+                android:text="@string/strProfilePaymentStatus"
+                android:textColor="@color/profile_text_color"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/rdg_profile_paymentstatus"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.26"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rdb_profile_paid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:text="@string/strProfilePaid"
+                    android:textColor="@color/profile_text_color" />
+
+                <RadioButton
+                    android:id="@+id/rdb_profile_unpaid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/strProfileUnpaid"
+                    android:textColor="@color/profile_text_color" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <AutoCompleteTextView
+            android:id="@+id/ed_profile_familyreference"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:hint="@string/strProfileName" />
+        <Spinner
+            android:id="@+id/sp_profile_familymember"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/tv_profile_addprescription"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:text="@string/strProfileAddPrescription"
+            android:textColor="@color/profile_text_color"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rel_signature_pad"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btn_profile_submit"
+        android:visibility="gone">
+    <include
+        layout="@layout/custom_prescrption"/>
+    </RelativeLayout>
+</RelativeLayout>

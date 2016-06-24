@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#152244</color>
+    <color name="colorPrimaryDark">#152244</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="text_color">#ffffff</color>
+    <color name="divider_color">#444E69</color>
+    <color name="dashboard_color">#80CEB4</color>
+
+    <!-- Create Patient Profile-->
+    <color name="profile_text_color">#1A294A</color>
+
+    <!-- -->
+    <color name="visit_attachement_background">#458CCA</color>
+
+
+</resources>
