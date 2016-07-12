@@ -13,23 +13,14 @@
         android:background="@color/colorPrimary"
         app:theme="@style/ToolbarColoredBackArrow"
         android:gravity="center"
-        android:titleTextColor="@color/dashboard_color" />/>
-
-
-    <Button
-        android:id="@+id/btn_dueamount_submit"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
-        android:text="@string/strProfileSubmit"
-        android:textColor="@color/dashboard_color" />
+        android:titleTextColor="@color/dashboard_color" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_dueamount_list"
+        android:id="@+id/rv_patient_histroy_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
-        android:layout_above="@id/btn_dueamount_submit"/>
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:scrollbars="horizontal"
+        android:layout_below="@id/toolbar"/>
 
 </RelativeLayout>

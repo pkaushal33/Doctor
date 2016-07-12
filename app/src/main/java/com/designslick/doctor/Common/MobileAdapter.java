@@ -41,10 +41,15 @@ public class MobileAdapter extends ArrayAdapter<String> {
             @Override
             protected FilterResults performFiltering(CharSequence constraint) {
                 FilterResults filterResults=new FilterResults();
-                for (int i=0;i<allData.size();i++){
-                    list.add(allData.get(i).getMobile());
-                }
+                list.clear();
+                if(constraint != null) {
+                    for (int i = 0; i < allData.size(); i++) {
 
+                        if(allData.get(i).getMobile().toLowerCase().contains(constraint.toString().toLowerCase()))
+                            list.add(allData.get(i).getMobile());
+
+                    }
+                }
                 filterResults.values=list;
                 filterResults.count=list.size();
                 return filterResults;

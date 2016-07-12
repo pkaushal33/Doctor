@@ -6,19 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".HistoryDetailsActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <RelativeLayout
+        android:id="@+id/rel_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:titleTextColor="@color/dashboard_color"
-        app:theme="@style/ToolbarColoredBackArrow" />
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/custom_toolbar"/>
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
+        android:layout_below="@id/rel_toolbar"
         android:gravity="center_vertical"
         android:orientation="vertical">
 
@@ -29,21 +29,27 @@
             android:weightSum="1">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                style="@style/history_textview"
                 android:layout_weight="0.7"
-                android:gravity="center_vertical"
                 android:text="@string/strProfileName" />
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/dashboard_color" />
 
             <TextView
                 android:id="@+id/tv_details_name"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                style="@style/history_textview"
                 android:layout_weight="0.3"
-                android:gravity="center_vertical"
                 android:text="@string/strProfileName" />
 
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dashboard_color" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,42 +64,55 @@
                 android:weightSum="1">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.8"
-                    android:gravity="center_vertical"
+                    style="@style/history_textview"
+                    android:layout_weight="0.5"
+                    android:gravity="center"
                     android:text="@string/strProfileAge" />
 
                 <TextView
                     android:id="@+id/tv_details_age"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:gravity="center_vertical"
+                    style="@style/history_textview"
+                    android:layout_weight="0.5"
                     android:text="@string/strProfileName" />
             </LinearLayout>
 
             <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/dashboard_color" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.5">
+                android:layout_weight="0.5"
+                android:weightSum="1">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.8"
-                    android:gravity="center_vertical"
+                    style="@style/history_textview"
+                    android:layout_weight="0.5"
+                    android:gravity="center"
                     android:text="@string/strProfileSex" />
 
                 <TextView
                     android:id="@+id/tv_details_sex"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:gravity="center_vertical"
+                    style="@style/history_textview"
+                    android:layout_weight="0.5"
                     android:text="@string/strProfileName" />
             </LinearLayout>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dashboard_color" />
+
+
+        <LinearLayout
+            android:id="@+id/lin_history_more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -101,50 +120,61 @@
             android:orientation="horizontal"
             android:weightSum="1">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.4"
-                android:weightSum="1">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.7"
-                    android:gravity="center_vertical"
-                    android:text="@string/strProfileMobile" />
-
-                <TextView
-                    android:id="@+id/tv_details_mobile"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.3"
-                    android:gravity="center_vertical"
-                    android:text="@string/strProfileName" />
-            </LinearLayout>
+            <TextView
+                style="@style/history_textview"
+                android:layout_weight="0.7"
+                android:text="@string/strProfileMobile" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.6"
-                android:weightSum="1">
+                android:background="@color/dashboard_color" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.6"
-                    android:gravity="center_vertical"
-                    android:text="@string/strProfileDateOfBirth" />
+            <TextView
+                android:id="@+id/tv_details_mobile"
+                style="@style/history_textview"
+                android:layout_weight="0.3"
+                android:text="@string/strProfileName" />
 
-                <TextView
-                    android:id="@+id/tv_details_dob"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.4"
-                    android:gravity="center_vertical"
-                    android:text="@string/strProfileName" />
-            </LinearLayout>
+
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dashboard_color" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+
+            <TextView
+                style="@style/history_textview"
+                android:layout_weight="0.7"
+                android:text="@string/strProfileDateOfBirth" />
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/dashboard_color" />
+
+            <TextView
+                android:id="@+id/tv_details_dob"
+                style="@style/history_textview"
+                android:layout_weight="0.3"
+                android:text="@string/strProfileName" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dashboard_color" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -153,21 +183,28 @@
             android:weightSum="1">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                style="@style/history_textview"
                 android:layout_weight="0.7"
-                android:gravity="center_vertical"
                 android:text="@string/strProfileAddress" />
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/dashboard_color" />
 
             <TextView
                 android:id="@+id/tv_details_address"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                style="@style/history_textview"
                 android:layout_weight="0.3"
-                android:gravity="center_vertical"
+
                 android:text="@string/strProfileName" />
 
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dashboard_color" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -176,21 +213,27 @@
             android:weightSum="1">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                style="@style/history_textview"
                 android:layout_weight="0.7"
-                android:gravity="center_vertical"
                 android:text="@string/strProfileQualification" />
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/dashboard_color" />
 
             <TextView
                 android:id="@+id/tv_details_qualification"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                style="@style/history_textview"
                 android:layout_weight="0.3"
-                android:gravity="center_vertical"
                 android:text="@string/strProfileName" />
 
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dashboard_color" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -199,26 +242,47 @@
             android:weightSum="1">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                style="@style/history_textview"
                 android:layout_weight="0.7"
-                android:gravity="center_vertical"
                 android:text="@string/strProfileOccupation" />
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/dashboard_color" />
 
             <TextView
                 android:id="@+id/tv_details_occupation"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                style="@style/history_textview"
                 android:layout_weight="0.3"
-                android:gravity="center_vertical"
                 android:text="@string/strProfileName" />
 
         </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dashboard_color" />
+        <TextView
+            android:id="@+id/tv_history_more"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:layout_gravity="end|right"
+            android:text="@string/strMoreDetails"
+            android:textSize="18sp"
+            android:padding="3dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:visibility="visible"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dashboard_color" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rl_details_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 

@@ -14,7 +14,7 @@
         android:textSize="14sp"
         android:gravity="center_vertical"
         android:paddingLeft="5dp"
-        android:layout_weight="0.5"
+        android:layout_weight="0.4"
         android:textColor="@color/colorPrimary"
         android:text="Kaushal Patel"/>
 
@@ -25,7 +25,7 @@
         android:textSize="14sp"
         android:gravity="center_vertical|end"
         android:paddingRight="5dp"
-        android:layout_weight="0.5"
+        android:layout_weight="0.6"
         android:textColor="@color/colorPrimary"
         android:text="Kaushal Patel"/>
 

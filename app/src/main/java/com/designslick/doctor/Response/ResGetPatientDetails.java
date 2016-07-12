@@ -75,7 +75,11 @@ public class ResGetPatientDetails {
 
         public class unpaid{
 
-            String visit_date,report_file,prescription_file;
+            String id,visit_date,report_file,prescription_file;
+
+            public String getId() {
+                return id;
+            }
 
             public String getVisit_date() {
                 return visit_date;

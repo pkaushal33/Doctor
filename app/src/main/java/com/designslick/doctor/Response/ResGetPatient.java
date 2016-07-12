@@ -25,8 +25,11 @@ public class ResGetPatient {
 
     public class data{
 
-        public String id,name,dob,age,gender,mobile,address,qualification,occupation,family_code;
+        public String id,name,dob,age,gender,mobile,address,qualification,occupation,family_code,created_date;
 
+        public String getCreated_date() {
+            return created_date;
+        }
 
         public String getId() {
             return id;

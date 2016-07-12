@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    android:titleTextColor="@color/dashboard_color"
+    android:layout_alignParentTop="true"
+    app:theme="@style/ToolbarColoredBackArrow">
+
+
+
+    <ImageView
+        android:id="@+id/toolbar_delete"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_delete" />
+
+    <ImageView
+        android:id="@+id/toolbar_add"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_add" />
+
+</android.support.v7.widget.Toolbar>

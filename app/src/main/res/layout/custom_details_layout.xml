@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    android:padding="10dp"
+    android:padding="5dp"
     android:background="@drawable/bg_list"
     android:orientation="vertical">
 
@@ -14,88 +14,24 @@
         android:weightSum="1">
 
         <TextView
+            android:id="@+id/tv_custom_visited_date_to"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
-            android:layout_weight="0.5"
+            android:layout_weight="0.2"
             android:gravity="center_vertical"
             android:paddingLeft="5dp"
             android:text="Visited Date"
             android:textColor="@color/colorPrimary"
             android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/tv_custom_visited_date"
-            android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:layout_weight="0.5"
-            android:gravity="center_vertical"
-            android:paddingRight="5dp"
-            android:text="Kaushal Patel"
-            android:textColor="@color/colorPrimary"
-            android:textSize="14sp" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:orientation="horizontal"
-        android:weightSum="1">
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:layout_weight="0.5"
-            android:gravity="center_vertical"
-            android:paddingLeft="5dp"
-            android:text="Prescription"
-            android:textColor="@color/colorPrimary"
-            android:textSize="14sp" />
-
         <ImageView
-            android:id="@+id/iv_custom_prescription_image"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:layout_weight="0.5"
-            android:gravity="center_vertical"
-            android:paddingRight="5dp"
-            android:text="Kaushal Patel"
-            android:textColor="@color/colorPrimary"
-            android:textSize="14sp" />
+            android:id="@+id/iv_custom_visited_delete"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:src="@drawable/ic_delete"/>
 
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:orientation="horizontal"
-        android:weightSum="1">
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:layout_weight="0.5"
-            android:gravity="center_vertical"
-            android:paddingLeft="5dp"
-            android:text="Report"
-            android:textColor="@color/colorPrimary"
-            android:textSize="14sp" />
-
-        <ImageView
-            android:id="@+id/iv_custom_report"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:layout_weight="0.5"
-            android:gravity="center_vertical"
-            android:paddingRight="5dp"
-            android:text="Kaushal Patel"
-            android:textColor="@color/colorPrimary"
-            android:textSize="14sp" />
-
-
-    </LinearLayout>
-
 
 </LinearLayout>

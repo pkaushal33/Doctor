@@ -10,14 +10,13 @@
 
 
     <style name="dashboard_menu_textview">
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">fill_parent</item>
-        <item name="android:layout_weight">0.5</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">0.7</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/dashboard_color</item>
         <item name="android:gravity">center</item>
-        <item name="android:layout_margin">10dp</item>
-        <item name="android:padding">5dp</item>
+        <item name="android:padding">3dp</item>
     </style>
 
     <style name="dashboard_menu_linerlayout">
@@ -30,11 +29,36 @@
         <item name="android:layout_weight">0.33</item>
     </style>
 
+    <style name="dashboard_sub_menu_linerlayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:weightSum">1</item>
+        <item name="android:layout_weight">0.5</item>
+    </style>
+
+    <style name="dashboard_sub_menu_imageview">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">0.3</item>
+        <item name="android:gravity">center</item>
+    </style>
+
     <style name="visit_edittext">
         <item name="android:layout_height">50dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:textColor">@color/profile_text_color</item>
         <item name="android:textColorHint">@color/profile_text_color</item>
+
+    </style>
+
+    <style name="history_textview">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/profile_text_color</item>
+        <item name="android:textColorHint">@color/profile_text_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">5dp</item>
 
     </style>
 

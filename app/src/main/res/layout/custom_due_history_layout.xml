@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    android:background="@drawable/bg_list"
+    android:weightSum="1">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <CheckBox
+        android:id="@+id/ch_custom_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_custom_name"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:textSize="14sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="5dp"
+        android:layout_weight="0.5"
+        android:textColor="@color/profile_text_color"
+        android:text="Kaushal Patel"/>
+
+    <TextView
+        android:id="@+id/tv_custom_amount"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:textSize="14sp"
+        android:gravity="right|center_vertical"
+        android:paddingRight="5dp"
+        android:layout_weight="0.5"
+        android:textColor="@color/profile_text_color"
+        android:text="200 Rs."/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_custom_date"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:textSize="14sp"
+        android:gravity="left|center_vertical"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="0.5"
+        android:textColor="@color/profile_text_color"
+        android:text="200 Rs."/>
+
+</LinearLayout>

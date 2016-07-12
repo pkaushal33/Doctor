@@ -1,5 +1,6 @@
 package com.designslick.doctor;
 
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -11,6 +12,9 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.designslick.doctor.Common.Api;
 import com.designslick.doctor.Common.CustomHistoryAdapter;
@@ -18,6 +22,8 @@ import com.designslick.doctor.Common.Utility;
 import com.designslick.doctor.Response.ResGetPatient;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -29,7 +35,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by kaushalpatel on 6/16/16.
  */
-public class PatientHistoryActivtiy extends AppCompatActivity{
+public class PatientHistoryActivtiy extends AppCompatActivity implements View.OnClickListener{
 
     private Utility utility;
 
@@ -37,9 +43,14 @@ public class PatientHistoryActivtiy extends AppCompatActivity{
     private CustomHistoryAdapter customHistoryAdapter;
 
     private List<ResGetPatient.data> resGetPatients=new ArrayList<>();
+    private List<ResGetPatient.data> searchData=new ArrayList<>();
+
     private LinearLayoutManager mLinearLayoutManager;
+    private EditText edFromDate,edToDate;
+    private ImageView ivSearch;
 
     private SearchView edSearch;
+    private String strFromDate,strToDate,iYear,iDay,iMonth;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -71,7 +82,10 @@ public class PatientHistoryActivtiy extends AppCompatActivity{
         recyclerView=(RecyclerView)findViewById(R.id.rv_patient_histroy_list);
 
         edSearch=(SearchView) findViewById(R.id.ed_search);
+        edFromDate=(EditText)findViewById(R.id.ed_histroy_fromdate);
+        edToDate=(EditText)findViewById(R.id.ed_histroy_todate);
 
+        ivSearch=(ImageView)findViewById(R.id.iv_history_search);
 
         recyclerView.setLayoutManager(mLinearLayoutManager);
 
@@ -91,7 +105,8 @@ public class PatientHistoryActivtiy extends AppCompatActivity{
                 for (int i=0;i<resGetPatients.size();i++){
 
                     final String name=resGetPatients.get(i).getName().toLowerCase();
-                    if (name.contains(query)){
+                    final String mobile=resGetPatients.get(i).getMobile().toString();
+                    if (name.contains(query) || mobile.contains(query)){
 
                         filterData.add(resGetPatients.get(i));
                     }
@@ -107,8 +122,102 @@ public class PatientHistoryActivtiy extends AppCompatActivity{
 
             }
         });
+
+        edFromDate.setOnClickListener(this);
+        edToDate.setOnClickListener(this);
+        ivSearch.setOnClickListener(this);
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+
+            case R.id.ed_histroy_fromdate:
+
+                Calendar calendar = Calendar.getInstance();
+
+
+                new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        iYear=String.valueOf(year);
+                        if((monthOfYear+1)<10){
+                            iMonth="0"+String.valueOf(monthOfYear+1);
+                        }else {
+                            iMonth=String.valueOf(monthOfYear+1);
+                        }
+                        if(dayOfMonth<10){
+                            iDay="0"+String.valueOf(dayOfMonth);
+                        }
+                        else {
+                            iDay=String.valueOf(dayOfMonth);
+                        }
+                        edFromDate.setText(iDay + "/" + iMonth + "/" + year);
+
+                    }
+                }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
+
+
+                break;
+
+            case R.id.ed_histroy_todate:
+
+                Calendar calendar1 = Calendar.getInstance();
+
+
+                new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        iYear=String.valueOf(year);
+                        if((monthOfYear+1)<10){
+                            iMonth="0"+String.valueOf(monthOfYear+1);
+                        }else {
+                            iMonth=String.valueOf(monthOfYear+1);
+                        }
+                        if(dayOfMonth<10){
+                            iDay="0"+String.valueOf(dayOfMonth);
+                        }
+                        else {
+                            iDay=String.valueOf(dayOfMonth);
+                        }
+                        edToDate.setText(iDay + "/" + iMonth + "/" + year);
+
+                    }
+                }, calendar1.get(Calendar.YEAR), calendar1.get(Calendar.MONTH), calendar1.get(Calendar.DAY_OF_MONTH)).show();
+
+
+                break;
+
+            case R.id.iv_history_search:
+
+                strFromDate=edFromDate.getText().toString().trim();
+                strToDate=edToDate.getText().toString().trim();
+
+                if(!Utility.isNotNull(strFromDate)){
+                    Utility.showalert(PatientHistoryActivtiy.this,getString(R.string.strNOFromDate));
+                } else if(!Utility.isNotNull(strToDate)){
+                    Utility.showalert(PatientHistoryActivtiy.this,getString(R.string.strNOToDate));
+                } else {
+
+                    searchData.clear();
+                    for (int i=0;i<resGetPatients.size();i++){
+                        Date FromDate=Utility.stringToDate(strFromDate);
+                        Date ToDate=Utility.stringToDate(strToDate);
+                        Date dbDate=Utility.timezoneToDate(resGetPatients.get(i).created_date);
+
+                        if(FromDate.before(dbDate) && ToDate.before(dbDate)){
+                            searchData.add(resGetPatients.get(i));
+                        }
+                    }
+
+                    recyclerView.setAdapter(new CustomHistoryAdapter(this,searchData));
+                    customHistoryAdapter.notifyDataSetChanged();
+
+                }
+                break;
+
+        }
+    }
 
     private void GetPatient() {
 
@@ -147,7 +256,9 @@ public class PatientHistoryActivtiy extends AppCompatActivity{
 
             @Override
             public void onFailure(Call<ResGetPatient> call, Throwable t) {
-
+                if(progressDialog.isShowing()){
+                    progressDialog.dismiss();
+                }
             }
         });
 

@@ -10,6 +10,7 @@
 
     <!-- Create Patient Profile-->
     <color name="profile_text_color">#1A294A</color>
+    <color name="profile_pen_color">#ff0000</color>
 
     <!-- -->
     <color name="visit_attachement_background">#458CCA</color>

@@ -59,6 +59,7 @@
                 android:hint="@string/strProfileAge"
                 android:inputType="number"
                 android:maxLines="1"
+                android:maxLength="3"
                 android:textColor="@color/profile_text_color"
                 android:textColorHint="@color/profile_text_color" />
 
@@ -207,7 +208,7 @@
 
         </LinearLayout>
 
-        <AutoCompleteTextView
+      <!--  <AutoCompleteTextView
             android:id="@+id/ed_profile_familyreference"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -218,7 +219,7 @@
         <Spinner
             android:id="@+id/sp_profile_familymember"
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="50dp" />-->
 
         <TextView
             android:id="@+id/tv_profile_addprescription"
@@ -228,6 +229,12 @@
             android:text="@string/strProfileAddPrescription"
             android:textColor="@color/profile_text_color"
             android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/iv_profile_prescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
 
     </LinearLayout>
     </ScrollView>

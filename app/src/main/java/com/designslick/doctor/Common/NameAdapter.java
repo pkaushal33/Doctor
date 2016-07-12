@@ -1,6 +1,7 @@
 package com.designslick.doctor.Common;
 
 import android.content.Context;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Filter;
 
@@ -41,10 +42,15 @@ public class NameAdapter extends ArrayAdapter<String> {
             @Override
             protected FilterResults performFiltering(CharSequence constraint) {
                 FilterResults filterResults=new FilterResults();
-                for (int i=0;i<allData.size();i++){
-                    list.add(allData.get(i).getName());
-                }
+                list.clear();
+                if(constraint != null) {
+                    for (int i = 0; i < allData.size(); i++) {
 
+                        if(allData.get(i).getName().toLowerCase().contains(constraint.toString().toLowerCase()))
+                        list.add(allData.get(i).getName());
+
+                    }
+                }
                 filterResults.values=list;
                 filterResults.count=list.size();
                 return filterResults;
@@ -52,6 +58,7 @@ public class NameAdapter extends ArrayAdapter<String> {
 
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
+
 
                 if (results != null && results.count > 0) {
                     notifyDataSetChanged();

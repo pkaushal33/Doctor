@@ -23,6 +23,7 @@
             android:layout_centerInParent="true"/>
 
         <ImageView
+            android:id="@+id/iv_dashboard_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_search"
@@ -44,20 +45,36 @@
         <LinearLayout
             style="@style/dashboard_menu_linerlayout">
 
-            <TextView
+            <LinearLayout
                 android:id="@+id/tv_dashboard_profile"
-                style="@style/dashboard_menu_textview"
-                android:drawableTop="@drawable/ic_create_profile"
-                android:text="@string/strCreateProfile"/>
+                style="@style/dashboard_sub_menu_linerlayout">
+
+                <ImageView
+                    style="@style/dashboard_sub_menu_imageview"
+                    android:src="@drawable/ic_create_profile"/>
+                <TextView
+
+                    style="@style/dashboard_menu_textview"
+                    android:text="@string/strCreateProfile"/>
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:background="@color/divider_color"/>
-            <TextView
+
+            <LinearLayout
                 android:id="@+id/tv_dashboard_patient_visit"
-                style="@style/dashboard_menu_textview"
-                android:drawableTop="@drawable/ic_create_profile"
-                android:text="@string/strCreatePatientVisit"/>
+                style="@style/dashboard_sub_menu_linerlayout">
+
+                <ImageView
+                    style="@style/dashboard_sub_menu_imageview"
+                    android:src="@drawable/ic_create_profile"/>
+
+                <TextView
+                    style="@style/dashboard_menu_textview"
+                    android:text="@string/strCreatePatientVisit"/>
+            </LinearLayout>
 
         </LinearLayout>
         <LinearLayout
@@ -67,20 +84,36 @@
         <LinearLayout
             style="@style/dashboard_menu_linerlayout">
 
-            <TextView
+            <LinearLayout
                 android:id="@+id/tv_dashboard_due_amount"
-                style="@style/dashboard_menu_textview"
-                android:drawableTop="@drawable/ic_due_icon"
-                android:text="@string/strDueAmount"/>
+                style="@style/dashboard_sub_menu_linerlayout">
+
+                <ImageView
+                    style="@style/dashboard_sub_menu_imageview"
+                    android:src="@drawable/ic_due_icon"/>
+
+                <TextView
+                    style="@style/dashboard_menu_textview"
+                    android:text="@string/strDueAmount"/>
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:background="@color/divider_color"/>
-            <TextView
+            <LinearLayout
                 android:id="@+id/tv_dashboard_patient_history"
-                style="@style/dashboard_menu_textview"
-                android:drawableTop="@drawable/ic_setting_icon"
-                android:text="@string/strPatientHistory"/>
+                style="@style/dashboard_sub_menu_linerlayout">
+
+                <ImageView
+                    style="@style/dashboard_sub_menu_imageview"
+                    android:src="@drawable/ic_setting_icon"/>
+
+                <TextView
+                    style="@style/dashboard_menu_textview"
+                    android:text="@string/strPatientHistory"/>
+            </LinearLayout>
+
 
         </LinearLayout>
         <LinearLayout
@@ -89,21 +122,38 @@
             android:background="@color/divider_color"/>
         <LinearLayout
             style="@style/dashboard_menu_linerlayout">
-
-            <TextView
+            <LinearLayout
                 android:id="@+id/tv_dashboard_backupdata"
-                style="@style/dashboard_menu_textview"
-                android:drawableTop="@drawable/ic_backup"
-                android:text="@string/strBackupData"/>
+                style="@style/dashboard_sub_menu_linerlayout">
+
+                <ImageView
+                    style="@style/dashboard_sub_menu_imageview"
+                    android:src="@drawable/ic_backup"/>
+
+                <TextView
+                    style="@style/dashboard_menu_textview"
+                    android:text="@string/strBackupData"/>
+            </LinearLayout>
+
+
             <LinearLayout
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:background="@color/divider_color"/>
-            <TextView
+
+            <LinearLayout
                 android:id="@+id/tv_dashboard_restoredata"
-                style="@style/dashboard_menu_textview"
-                android:drawableTop="@drawable/ic_restore_icon"
-                android:text="@string/strRestoreData"/>
+                style="@style/dashboard_sub_menu_linerlayout">
+
+                <ImageView
+                    style="@style/dashboard_sub_menu_imageview"
+                    android:src="@drawable/ic_restore_icon"/>
+
+                <TextView
+                    style="@style/dashboard_menu_textview"
+                    android:text="@string/strRestoreData"/>
+            </LinearLayout>
+
 
         </LinearLayout>
     </LinearLayout>

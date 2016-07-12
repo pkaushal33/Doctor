@@ -13,6 +13,9 @@
     <string name="strSettings">Settings</string>
     <string name="strBackupData">Backup Data</string>
     <string name="strRestoreData">Restore Data</string>
+    <string name="strMoreDetails"><u>Show Details</u></string>
+    <string name="strHideDetails"><u>Hide Details</u></string>
+
 
 
     <string name="strProfileTitle">Create Patient Profile</string>
@@ -52,6 +55,13 @@
 
     <!-- Create Patient Visit -->
     <string name="strVisitDate">Visit Date</string>
+    <string name="strVisitReport"><u>Reprt</u></string>
+
+    <!-- History Page-->
+    <string name="strFromDate">From Date</string>
+    <string name="strToDate">To Date</string>
+    <string name="strNOFromDate">Please select from date.</string>
+    <string name="strNOToDate">Please select to date.</string>
 
     <!-- Common Message -->
     <string name="msgNotInternet">Please check you internet. Try Again...</string>

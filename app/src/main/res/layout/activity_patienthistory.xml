@@ -16,11 +16,57 @@
         android:titleTextColor="@color/dashboard_color" />
 
 
+    <LinearLayout
+        android:id="@+id/date_filter"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/toolbar"
+        android:padding="3dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <EditText
+            android:id="@+id/ed_histroy_fromdate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/strFromDate"
+            android:focusable="false"
+            android:clickable="true"
+            android:layout_weight="0.20"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="TO"
+            android:gravity="center"
+            android:layout_weight="0.30"/>
+
+        <EditText
+            android:id="@+id/ed_histroy_todate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/strToDate"
+            android:focusable="false"
+            android:clickable="true"
+            android:layout_weight="0.20"/>
+
+        <ImageView
+            android:id="@+id/iv_history_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_search"
+            android:layout_weight="0.30"/>
+    </LinearLayout>
+
+
+
     <android.support.v7.widget.SearchView
         android:id="@+id/ed_search"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/toolbar"
+        android:padding="3dp"
+        android:layout_below="@id/date_filter"
+        android:background="@drawable/bg_list"
         android:drawableRight="@drawable/ic_search"/>
 
 

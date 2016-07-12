@@ -10,7 +10,7 @@
         android:layout_height="50dp"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:weightSum="1">
+        android:weightSum="3">
 
         <Button
             android:id="@+id/custom_ok"
@@ -18,7 +18,15 @@
             android:layout_height="fill_parent"
             android:text="OK"
             android:textSize="20sp"
-            android:layout_weight="0.50"/>
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/custom_clear"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Clear"
+            android:textSize="20sp"
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/custom_cancel"
@@ -26,7 +34,7 @@
             android:layout_height="fill_parent"
             android:text="Cancel"
             android:textSize="20sp"
-            android:layout_weight="0.50"/>
+            android:layout_weight="1"/>
     </LinearLayout>
 
     <com.github.gcacace.signaturepad.views.SignaturePad
@@ -35,6 +43,7 @@
         android:layout_height="fill_parent"
         android:layout_above="@id/custom_bottombar"
         android:background="@color/text_color"
-        app:penColor="@color/profile_text_color"/>
+        app:minWidth="1dp"
+        app:penColor="@color/profile_pen_color"/>
 
 </RelativeLayout>
