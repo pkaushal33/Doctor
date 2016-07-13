@@ -117,6 +117,12 @@
 
         </LinearLayout>
 
+        <EditText
+            android:id="@+id/ed_visit_spinstruction"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/strSpecialInstrustion"/>
+
         <TextView
             android:id="@+id/tv_visit_addprescription"
             android:layout_width="match_parent"

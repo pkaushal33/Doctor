@@ -238,7 +238,7 @@ public class PatientHistoryActivtiy extends AppCompatActivity implements View.On
 
                 if (progressDialog.isShowing())
                     progressDialog.dismiss();
-                if (response.body().errorcode == 1) {
+                if (response.body().errorcode == '1') {
 
 
                         resGetPatients=response.body().data;

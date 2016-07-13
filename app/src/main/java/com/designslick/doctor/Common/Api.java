@@ -29,14 +29,14 @@ public interface Api {
                                    @Part("address") RequestBody address, @Part("qualification") RequestBody qualification, @Part("occupation") RequestBody occupation,
                                    @Part("payable_amount") RequestBody payable_amount, @Part("payment_status") RequestBody payment_status,
                                    @Part("visit_date") RequestBody visit_date, @Part("family_code") RequestBody family_code,
-                                   @Part MultipartBody.Part report_file, @Part MultipartBody.Part prescription_file);
+                                   @Part("special_instruction") RequestBody special_instruction);
 
 
 
     @Multipart
     @POST("api.php?request=addPrescription")
     Call<ResAddProfile> addPatientVisit(@Part("patient_id") RequestBody id,@Part("visit_date") RequestBody visitedDate,
-                                        @Part("payable_amount") RequestBody amount,@Part("payment_status") RequestBody payment_status,
+                                        @Part("payable_amount") RequestBody amount,@Part("payment_status") RequestBody payment_status,@Part("special_instruction") RequestBody special_instruction,
                                  @Part MultipartBody.Part report,@Part MultipartBody.Part prescription);
 
     @GET("api.php?request=getPatientList")

@@ -51,6 +51,8 @@
     <string name="msgProfileAge">Please enter Age.</string>
     <string name="msgProfileSex">Please select Sex.</string>
     <string name="msgProfileMobile">Please enter mobile.</string>
+    <string name="strSpecialInstrustion">Special Instruction</string>
+    <string name="strPastHistory">Past History</string>
 
 
     <!-- Create Patient Visit -->

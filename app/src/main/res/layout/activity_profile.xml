@@ -208,18 +208,12 @@
 
         </LinearLayout>
 
-      <!--  <AutoCompleteTextView
-            android:id="@+id/ed_profile_familyreference"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginTop="24dp"
-            android:ems="10"
-            android:hint="@string/strProfileName" />
-        <Spinner
-            android:id="@+id/sp_profile_familymember"
+
+        <EditText
+            android:id="@+id/ed_profile_spinstruction"
             android:layout_width="match_parent"
-            android:layout_height="50dp" />-->
+            android:layout_height="50dp"
+            android:hint="@string/strSpecialInstrustion"/>
 
         <TextView
             android:id="@+id/tv_profile_addprescription"

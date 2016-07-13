@@ -36,7 +36,7 @@ public class HistoryDetailsActivity extends AppCompatActivity {
     private Utility utility;
 
     private TextView tvPatientName, tvPatientAge, tvPatientSex, tvPatientMobile, tvPatientDOB,
-            tvPatientAddress, tvPatientQualification, tvPatientOccupation, tvMoreDetails;
+            tvPatientAddress, tvPatientQualification, tvPatientOccupation, tvMoreDetails,tvPastHistory;
 
     private RecyclerView recyclerView;
     private LinearLayout linMoreDetails;
@@ -80,6 +80,7 @@ public class HistoryDetailsActivity extends AppCompatActivity {
         tvPatientQualification = (TextView) findViewById(R.id.tv_details_qualification);
         tvPatientOccupation = (TextView) findViewById(R.id.tv_details_occupation);
         tvMoreDetails = (TextView) findViewById(R.id.tv_history_more);
+        tvPastHistory=(TextView)findViewById(R.id.tv_hsitory_past);
 
         tvMoreDetails.setText(Html.fromHtml(getString(R.string.strMoreDetails)));
         ivAdd = (ImageView) findViewById(R.id.toolbar_add);
@@ -157,6 +158,7 @@ public class HistoryDetailsActivity extends AppCompatActivity {
                         tvPatientAddress.setText(response.body().getData().get(0).getAddress());
                         tvPatientQualification.setText(response.body().getData().get(0).getQualification());
                         tvPatientOccupation.setText(response.body().getData().get(0).getOccupation());
+                        tvPastHistory.setText(response.body().getData().get(0).getSpecial_instruction());
 
                         data = response.body().data.get(0).getUnpaid();
 

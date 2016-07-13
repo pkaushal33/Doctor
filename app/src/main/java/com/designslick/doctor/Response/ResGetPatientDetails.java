@@ -29,8 +29,12 @@ public class ResGetPatientDetails {
 
     public class data{
 
-        public String id,name,dob,gender,mobile,address,qualification,occupation,age;
+        public String id,name,dob,gender,mobile,address,qualification,occupation,age,special_instruction;
         public List<unpaid> unpaid;
+
+        public String getSpecial_instruction() {
+            return special_instruction;
+        }
 
         public List<ResGetPatientDetails.data.unpaid> getUnpaid() {
             return unpaid;
